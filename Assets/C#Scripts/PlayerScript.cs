@@ -25,22 +25,21 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        speed = 4.5f;
-
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
         helper = gameObject.AddComponent<Helper>();
-
-
-        MovePlayer();
 
     }
 
 
     void Update()
     {
+        speed = 4.5f;
         helper.DoRayCollisionCheck(0, 0);
+
+        animator.SetFloat("Speed", 0);
+        MovePlayer();
 
     }
 
@@ -50,15 +49,20 @@ public class PlayerScript : MonoBehaviour
         
 
 
-        if (Input.GetKey("a") == true|| Input.GetKey("left") == true)
+        if (Input.GetKey("left") == true)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            animator.SetFloat("Speed", 1);
             sr.flipX = true;
+
+            print("player moving left");
         }
-        if (Input.GetKey("d") == true || Input.GetKey("right") == true)
+        if (Input.GetKey("right") == true)
         {
             rb.velocity = new Vector2(+speed, rb.velocity.y);
+            animator.SetFloat("Speed", 1);
             sr.flipX = false;
+            print("player moving right");
         }
     }
 }
