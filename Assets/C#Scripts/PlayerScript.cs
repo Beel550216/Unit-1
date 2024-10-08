@@ -25,6 +25,8 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        speed = 4.5f;
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
@@ -48,12 +50,12 @@ public class PlayerScript : MonoBehaviour
         
 
 
-        if (Input.GetKey("a") || Input.GetKey("left"))
+        if (Input.GetKey("a") == true|| Input.GetKey("left") == true)
         {
-           rb.velocity = new Vector2(-speed, rb.velocity.y);
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
             sr.flipX = true;
         }
-        if (Input.GetKey("d") || Input.GetKey("right"))
+        if (Input.GetKey("d") == true || Input.GetKey("right") == true)
         {
             rb.velocity = new Vector2(+speed, rb.velocity.y);
             sr.flipX = false;
