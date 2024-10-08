@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
 
     Rigidbody2D rb;
     SpriteRenderer sr;
-    private float speed = 4.5f;
+    private float speed = 2.5f;
     public Animator animator;
 
     bool isGrounded;
@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        speed = 4.5f;
+        speed = 2.5f;
         helper.DoRayCollisionCheck(0, 0);
 
         animator.SetFloat("Speed", 0);
