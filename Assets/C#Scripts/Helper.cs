@@ -35,11 +35,11 @@ public class Helper : MonoBehaviour
        Color hitColour = Color.white;
 
        if(hit.collider != null)
-        {
+       {
             hitSomething = true;
             hitColour = Color.green;
             print("player collided with Ground Layer");
-        }
+       }
 
        Debug.DrawRay(transform.position + offset, -Vector3.up * rayLength, hitColour);
 

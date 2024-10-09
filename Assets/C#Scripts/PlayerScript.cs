@@ -30,16 +30,18 @@ public class PlayerScript : MonoBehaviour
 
         helper = gameObject.AddComponent<Helper>();
 
+        animator.SetFloat("Speed", 0);
     }
 
 
     void Update()
     {
         speed = 2.5f;
-        helper.DoRayCollisionCheck(0, 0);
+        helper.DoRayCollisionCheck(0,0);
 
         animator.SetFloat("Speed", 0);
         MovePlayer();
+        
 
     }
 
