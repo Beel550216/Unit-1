@@ -11,15 +11,15 @@ public class PlayerScript : MonoBehaviour
     private float speed = 2.5f;
     public Animator animator;
 
-    bool isGrounded;
+    //bool isGrounded;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        isGrounded = true;
+        //isGrounded = true;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        isGrounded = false;
+        //isGrounded = false;
     }
 
 
@@ -37,7 +37,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         speed = 2.5f;
-        helper.DoRayCollisionCheck(0,0);
+        helper.DoRayCollisionCheck(0,0,0.5f);
+        
 
         animator.SetFloat("Speed", 0);
         MovePlayer();
