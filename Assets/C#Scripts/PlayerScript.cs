@@ -11,15 +11,15 @@ public class PlayerScript : MonoBehaviour
     private float speed = 2.5f;
     public Animator animator;
 
-    //bool isGrounded;
+    bool grounded, jumping;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //isGrounded = true;
+        grounded = true;
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //isGrounded = false;
+        grounded = false;
     }
 
 
@@ -42,9 +42,51 @@ public class PlayerScript : MonoBehaviour
 
         animator.SetFloat("Speed", 0);
         MovePlayer();
-        
+
+        Jump();
+        Falling();
+        Landed();
 
     }
+
+    void Jump()
+    {
+        if (Input.GetKeyDown("space") && grounded == true)
+        {
+            rb.AddForce(new Vector3(0, 5, 0), ForceMode2D.Impulse);
+
+            animator.SetBool("jumpOff" , true);
+            animator.SetBool("landed", false);
+
+            jumping = true;
+        }
+    }
+
+    void Falling()
+    {
+        if(jumping == true && grounded == false && (rb.velocity.y > 0))
+        {
+            animator.SetBool("falling", true);
+        }
+    }
+
+    void Landed()
+    {
+        if(jumping && grounded && (rb.velocity.y <= 0))
+        {
+            jumping = false;
+            animator.SetBool("jumpOff", false);
+            animator.SetBool("landed", true);
+            animator.SetBool("falling", false);
+        }
+    }
+
+
+
+
+
+
+
 
 
     void MovePlayer()
@@ -67,5 +109,9 @@ public class PlayerScript : MonoBehaviour
             sr.flipX = false;
             print("player moving right");
         }
+
+
+
+
     }
 }
