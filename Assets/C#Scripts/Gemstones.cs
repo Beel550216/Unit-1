@@ -10,7 +10,7 @@ public class Gemstones : MonoBehaviour
         print("You have collected a gemstone!");
             
         Score.instance.AddPoints();
-
+        
     }
 
 

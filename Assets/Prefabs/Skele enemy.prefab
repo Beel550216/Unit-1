@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4142217497446753859}
   - component: {fileID: 4631659932820685884}
   - component: {fileID: -54754117161480522}
+  - component: {fileID: 3396522049861842065}
   m_Layer: 0
   m_Name: Skele enemy
   m_TagString: Untagged
@@ -182,3 +183,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3396522049861842065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742056905472388969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62446cb3ef2a3746bb3755a9ad25d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

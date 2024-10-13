@@ -91,7 +91,12 @@ public class PlayerScript : MonoBehaviour
 
     void MovePlayer()
     {
-        
+        animator.SetBool("attack", false);
+
+        if (Input.GetKey("a"))
+        {
+            animator.SetBool("attack", true);
+        }
 
 
         if (Input.GetKey("left") == true)

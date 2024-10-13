@@ -48,6 +48,18 @@ public class Helper : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter2D( Collision2D collision)
+    {
+        if (gameObject.tag != "Player")
+        {
+            if (Input.GetKey("a"))
+            {
+                Destroy(gameObject);
+
+            }
+        }
+    
+    }
 
 
     // Update is called once per frame
