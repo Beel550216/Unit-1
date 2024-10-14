@@ -9,6 +9,9 @@ public class Helper : MonoBehaviour
     SpriteRenderer sr;
     Rigidbody2D rb;
 
+    public Animator animator;
+    public int health = 3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,11 +55,27 @@ public class Helper : MonoBehaviour
     {
         if (gameObject.tag != "Player")
         {
-            if (Input.GetKey("a"))
+            if(gameObject.tag == "Slime" && Input.GetKey("a"))
+            {
+                animator.SetBool("attacked", true);
+                animator.SetBool("Walk", false);
+                Destroy(gameObject);
+
+
+               // health = health--;
+
+              //  if(health == 0)
+             //   {
+               //     Destroy(gameObject);
+                //}
+            }
+            else if (Input.GetKey("a"))
             {
                 Destroy(gameObject);
 
             }
+
+            
         }
     
     }
@@ -65,6 +84,7 @@ public class Helper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        animator.SetBool("attacked", false);
+        animator.SetBool("Walk", true);
     }
 }

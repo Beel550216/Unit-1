@@ -5,16 +5,16 @@ using UnityEngine;
 public class StoneFloat : MonoBehaviour
 {
     public float speed;
-    private Light light;
+    private Light llight;
 
     void Start()
     {
-        light = GetComponentInChildren<Light>();
+        llight = GetComponentInChildren<Light>();
     }
 
     void Update()
     {
-        light.intensity = 0.6f + Mathf.Sin(Time.time * speed) * 0.3f;
+        llight.intensity = 0.6f + Mathf.Sin(Time.time * speed) * 0.3f;
         transform.position = new Vector3(transform.position.x, -1 + Mathf.Sin(Time.time * speed) * 0.3f, transform.position.z);
     }
 }
