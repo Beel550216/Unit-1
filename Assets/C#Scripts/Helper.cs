@@ -85,6 +85,6 @@ public class Helper : MonoBehaviour
     void Update()
     {
         animator.SetBool("attacked", false);
-        animator.SetBool("Walk", true);
+        //animator.SetBool("Walk", true);
     }
 }
