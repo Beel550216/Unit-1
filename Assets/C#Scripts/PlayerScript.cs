@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
 
     bool grounded, jumping;
 
+    public float health = 10;
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         grounded = true;
@@ -41,12 +43,15 @@ public class PlayerScript : MonoBehaviour
         
 
         animator.SetFloat("Speed", 0);
+        
         MovePlayer();
 
         Jump();
         Falling();
         Landed();
 
+        Death();
+        animator.SetBool("Dead", false);
     }
 
     void Jump()
@@ -98,6 +103,12 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("attack", true);
         }
 
+        if (Input.GetKey("left shift"))
+        {
+            speed = 4.5f;
+        }
+
+
 
         if (Input.GetKey("left") == true)
         {
@@ -115,8 +126,23 @@ public class PlayerScript : MonoBehaviour
             print("player moving right");
         }
 
+    }
 
+    public void Death()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            animator.SetBool("Dead", true);
 
+        }
+
+        
 
     }
+
+
+
+
+
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boundary
   - Slime
+  - gem+
   layers:
   - Default
   - TransparentFX

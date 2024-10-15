@@ -53,30 +53,40 @@ public class Helper : MonoBehaviour
 
     private void OnCollisionEnter2D( Collision2D collision)
     {
-        if (gameObject.tag != "Player")
+        if (gameObject.tag != "Player" && gameObject.tag != "Slime")
         {
-            if(gameObject.tag == "Slime" && Input.GetKey("a"))
-            {
-                animator.SetBool("attacked", true);
-                animator.SetBool("Walk", false);
-                Destroy(gameObject);
-
-
-               // health = health--;
-
-              //  if(health == 0)
-             //   {
-               //     Destroy(gameObject);
-                //}
-            }
-            else if (Input.GetKey("a"))
+            if (Input.GetKey("a"))
             {
                 Destroy(gameObject);
 
             }
 
-            
         }
+            /*if(gameObject.tag == "Slime")
+            {
+                //animator.SetBool("Walk", false);
+                //animator.SetBool("attacked", true);
+
+                if(Input.GetKey("a"))
+                {
+                    
+                    
+                    Destroy(gameObject);
+
+
+                    // health = health--;
+
+                       //  if(health == 0)
+                   //   {
+                    //     Destroy(gameObject);
+                      //}
+                    
+                }
+
+                
+            }*/
+                
+     
     
     }
 

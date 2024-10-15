@@ -8,8 +8,15 @@ public class Gemstones : MonoBehaviour
     {
         Destroy(gameObject);
         print("You have collected a gemstone!");
-            
-        Score.instance.AddPoints();
+    
+        if(gameObject.tag == "gem+")
+        {
+            Score.instance.AddMorePoints();
+        }
+        else
+        {
+            Score.instance.AddPoints();
+        }
         
     }
 
