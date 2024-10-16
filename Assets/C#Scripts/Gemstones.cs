@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Gemstones : MonoBehaviour
 {
+    [SerializeField] AudioSource SFXSource;
+    public AudioClip gemstone;
+
     private void OnTriggerEnter2D( Collider2D collision)
     {
         Destroy(gameObject);
@@ -17,7 +20,9 @@ public class Gemstones : MonoBehaviour
         {
             Score.instance.AddPoints();
         }
-        
+
+        SFXSource.clip = gemstone;
+        SFXSource.Play();
     }
 
 
