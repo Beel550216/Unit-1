@@ -8,24 +8,18 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-       if(collision.gameObject.tag == "Boundary")
-       {
+        if (collision.gameObject.tag == "Bat")
+        {
             Destroy(collision.gameObject);
-            animator.SetBool("Dead", true);
+            //animator.SetBool("Dead", true);
+
 
         }
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+    // Start is called before the first frame update
+
+
+ 
+

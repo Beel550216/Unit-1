@@ -35,7 +35,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if(helper.DoRayCollisionCheck(-0.3f, -0.5f, 0.3f) == false)
         {
-            if(dir < 0)
+            if(dir <= 0)
             {
                 dir = 1;
                 sr.flipX = false;

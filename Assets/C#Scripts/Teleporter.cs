@@ -25,5 +25,13 @@ public class Teleporter : MonoBehaviour
         {
             player.transform.position = teleport.transform.position;
         }
+        if(collision.gameObject.tag == "Bat")
+        {
+            collision.transform.position = teleport.transform.position;
+        }
     }
+
+
+
+
 }

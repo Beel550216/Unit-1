@@ -8,6 +8,7 @@ TagManager:
   - Slime
   - gem+
   - Bridge
+  - Bat
   layers:
   - Default
   - TransparentFX

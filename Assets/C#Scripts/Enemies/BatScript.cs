@@ -26,4 +26,6 @@ public class BatScript : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
 }

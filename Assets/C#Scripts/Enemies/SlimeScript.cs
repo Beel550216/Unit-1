@@ -9,7 +9,10 @@ public class SlimeScript : MonoBehaviour
     SpriteRenderer sr;
     Rigidbody2D rb;
 
-    private float ehealth = 3;
+    [SerializeField] AudioSource SFXSource;
+    public AudioClip enemy;
+
+    private float health = 3;
 
     void Start()
     {
@@ -23,10 +26,15 @@ public class SlimeScript : MonoBehaviour
     {
         if (Input.GetKey("a"))
         {
-            //ehealth = ehealth--;
+            //health = health--;
 
-            //if(ehealth == 0)   
+           // if (health == 0)
+          
             Destroy(gameObject);
+         
+
+            SFXSource.clip = enemy;
+            SFXSource.Play();
 
         }
 

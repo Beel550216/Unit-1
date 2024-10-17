@@ -59,6 +59,7 @@ public class Helper : MonoBehaviour
             {
                 Destroy(gameObject);
 
+                Score.instance.AddMorePoints();
             }
 
         }
