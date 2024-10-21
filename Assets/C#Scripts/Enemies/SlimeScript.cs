@@ -6,6 +6,7 @@ using UnityEngine;
 public class SlimeScript : MonoBehaviour
 {
     Helper helper;
+    PlayerScript player;
     SpriteRenderer sr;
     Rigidbody2D rb;
 
@@ -18,12 +19,16 @@ public class SlimeScript : MonoBehaviour
     {
         helper = gameObject.AddComponent<Helper>();
 
+        player = gameObject.AddComponent<PlayerScript>();
+
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //player.Damage();
+
         if (Input.GetKey("a"))
         {
             //health = health--;

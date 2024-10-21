@@ -15,10 +15,12 @@ public class Gemstones : MonoBehaviour
         if(gameObject.tag == "gem+")
         {
             Score.instance.AddMorePoints();
+            Score.instance.SetScore();
         }
         else
         {
             Score.instance.AddPoints();
+            Score.instance.SetScore();
         }
 
         SFXSource.clip = gemstone;

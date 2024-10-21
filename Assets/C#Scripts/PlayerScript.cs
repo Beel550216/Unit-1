@@ -13,7 +13,9 @@ public class PlayerScript : MonoBehaviour
 
     bool grounded, jumping;
 
-    public float health = 10;
+    public float health = 3;
+
+    public GameObject teleport;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -38,6 +40,7 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+
         speed = 2.5f;
         helper.DoRayCollisionCheck(0,0,0.5f);
         
@@ -51,7 +54,7 @@ public class PlayerScript : MonoBehaviour
         Landed();
 
         Death();
-        animator.SetBool("Dead", false);
+        //animator.SetBool("Dead", false);
     }
 
     void Jump()
@@ -85,11 +88,6 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("falling", false);
         }
     }
-
-
-
-
-
 
 
 
@@ -141,5 +139,29 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    public void Damage()
+    {
+        health = health - 1;
+        print("You have been hit");
+        print(health);
 
+        if (health <= 0)
+        {
+            animator.SetBool("Dead", true);
+            gameObject.transform.position = teleport.transform.position;
+
+            print("You have died");
+
+        }
+
+    }
+
+    public void Mushroom()
+    {
+        
+        rb.AddForce(new Vector3(0, 10, 0), ForceMode2D.Impulse);
+
+
+    }
+    
 }

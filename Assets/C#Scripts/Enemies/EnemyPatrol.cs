@@ -11,6 +11,8 @@ public class EnemyPatrol : MonoBehaviour
 
     float dir;
 
+    //public Animator animator;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -19,6 +21,7 @@ public class EnemyPatrol : MonoBehaviour
         helper = gameObject.AddComponent<Helper>();
 
         dir = 1;
+        //animator.SetBool("Walk", true);
 
     }
 

@@ -41,7 +41,7 @@ public class Helper : MonoBehaviour
        {
             hitSomething = true;
             hitColor = Color.green;
-            print("player collided with Ground Layer");
+           // print("player collided with Ground Layer");
        }
 
         Debug.DrawRay(transform.position + offset, -Vector3.up * rayLength, hitColor);
@@ -60,6 +60,7 @@ public class Helper : MonoBehaviour
                 Destroy(gameObject);
 
                 Score.instance.AddMorePoints();
+                Score.instance.SetScore();
             }
 
         }

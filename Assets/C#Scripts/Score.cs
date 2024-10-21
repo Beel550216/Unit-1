@@ -33,9 +33,9 @@ public class Score : MonoBehaviour
 
     public void AddPoints()
     {
-        
+
         score += 1;
-        scoreText.text = score.ToString() + " points";
+        scoreText.text = "Score: " + score.ToString(); //+ " points"
 
     }
 
@@ -43,33 +43,36 @@ public class Score : MonoBehaviour
     public void AddMorePoints()
     {
         score += 3;
-        scoreText.text = score.ToString() + " points";
+        scoreText.text = "Score: " + score.ToString(); //+" points"
     }
 
 
 
-    /* void SetScore()
-     {
-         if (script.health <= 0)
-         {
-             if (score > highscore);
-             {
-                highscoreText.text = score.ToString() + " points";
-                highscore = score;
-             {
-         }
-     }*/
-
-
-    public void ResetPoints()
+    public void SetScore()
     {
-        score = 0;
-    }
+        
+        if (score > highscore)
+        {
+            highscoreText.text = " highscore = " + score.ToString();
+            highscore = score;
+        }
+        
+        if (script.health <= 0)
+        {
+            void ResetPoints()
+            {
+                score = 0;
+            }
 
 
-    void Update()
-    {
-       // SetScore();
+            
 
+
+            void Update()
+            {
+                // SetScore();
+
+            }
+        }
     }
 }
