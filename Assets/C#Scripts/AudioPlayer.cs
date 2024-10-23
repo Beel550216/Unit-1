@@ -20,6 +20,7 @@ public class SoundEffectsPlayer : MonoBehaviour
     public AudioClip footsteps;
     public AudioClip footsteps2;
     public AudioClip jump;
+    public AudioClip mushroom;
 
     private void Start()
     {
